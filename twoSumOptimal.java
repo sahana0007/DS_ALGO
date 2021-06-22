@@ -27,8 +27,8 @@ public class twoSumOptimal {
             int currentSum = array[left] + array[right];
             if (currentSum == target) {
                 System.out.println("Output has been found " + array[left] + array[right]);
-                left++;
-                right--;
+                left++; //finds all left values
+                right--; //finds all right values
             } else if (currentSum < target) {
                 left++;
             }
