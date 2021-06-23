@@ -1,6 +1,6 @@
 package com.datastructure;
 
-//binary search in sorted array
+//binary search in sorted array ascending order
 import java.util.Arrays;
 import java.util.Scanner;
 
