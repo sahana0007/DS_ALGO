@@ -25,7 +25,7 @@ public class FirstOccuranceBS {
             if (target == array[mid]) {
                 result = mid;
                 end = mid - 1;
- //               break;
+ //              break;
         }
             else if (target<=array[mid])
             {
