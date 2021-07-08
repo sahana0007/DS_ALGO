@@ -1,35 +1,35 @@
 package com.datastructure;
 
-import java.util.Scanner;
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+        import java.util.Scanner;
+        import java.util.*;
+        import java.lang.*;
+        import java.io.*;
 
-public class NTimesArrRotated
+public class ArrayRotationCircular
 {
     static int CountMinimumElementIndex(int array[]){
-        int left = 0;
+        int start = 0;
         int n = array.length;
-        int right = n - 1;
-    while(left<=right){
-    if(array[left]<=array[right]){return left; } //Case 1:already sorted
+        int end = n - 1;
+        while(start<=end){
+            if(array[start]<=array[end]){return start; } //Case 1:already sorted
 
-    int mid = (left + (right - left) / 2);
+            int mid = (start + (end - start) / 2);
 
-    int next = (mid + 1)%array.length;
-    int previous = (mid -1 +array.length)%array.length;
+            int next = (mid + 1)%n;
+            int previous = (mid -1 +n)%n;
 
-    if(array[mid]<=array[next] && array[mid] <= array[previous]) //case 2 ie mid sandwitched
-    {return mid;}
+            if(array[mid]<=array[next] && array[mid] <= array[previous]) //case 2 ie mid sandwitched
+            {return mid;}
 
-    //if array[mid..right] is sorted and mid is not the min element, so discard and search in left
-    if(array[mid]>=array[left]){
-            left = mid +1;
-    }
-    if (array[mid]<=array[right]){
-        right = mid -1; }
+            //if array[mid..right] is sorted and mid is not the min element, so discard and search in left
+            if(array[mid]>=array[start]){  //case 3
+                start = mid +1;
+            }
+            if (array[mid]<=array[end]){   //case 4
+                end = mid -1; }
         }
-    return -1;
+        return -1;
     }
 
     public static void main (String[] args){
