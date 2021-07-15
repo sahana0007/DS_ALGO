@@ -16,11 +16,11 @@ public class FloorOfElement {
                 return mid;
             else if (array[mid] < target) // move to right
             {
+                floor = array[mid];
                 start = mid + 1;
  //               return array[mid];
             }
             else  {
-                floor = array[mid];
                 end = mid - 1;
  //               return array[mid];
             }
@@ -43,14 +43,22 @@ public class FloorOfElement {
         int n = array.length;
         System.out.println("Enter the number to search:");
         int target = s.nextInt();
- //       int n = sizeof(array) / sizeof(array[0]);
-        int index = FloorOfElement(array, target);
 
-        for (int i = 0; i < length; i++)
-        {
-            System.out.print("Number " + i + " —> ");
-            System.out.println("ceil is " + FloorOfElement(array, )
-                    + ", floor is " + FloorOfElement(array, i));
+        int index = FloorOfElement(array, target);
+        if (index != -1) {
+            System.out.println("Element found at index " + index);
+        } else {
+            System.out.println("Element not found in the array");
         }
     }
 }
+
+/*
+for (int i = 0; i < length; i++)
+        {
+        System.out.print("Number " + i + " —> ");
+        System.out.println("ceil is " + FloorOfElement(array,i)
+        + ", floor is " + FloorOfElement(array, i));
+        }
+
+ */
